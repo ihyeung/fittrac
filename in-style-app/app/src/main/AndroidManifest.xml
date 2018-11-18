@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.utahmsd.cs6018.instyle">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true"/>
+
+    <application
+        android:name=".InStyleApp"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m" >
+        <activity
+            android:name=".activity.StartupActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.ProfileEntryActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.WeatherActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.ProfileSummaryActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.FitnessDetailsActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.CreateAccountActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.AccountSettingsActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+
+    </application>
+
+</manifest>
