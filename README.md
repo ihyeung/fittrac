@@ -1,4 +1,4 @@
-# in-style-fitness
+# F I T T R A C
 Fitness tracker Android app written during my final semester of the MSD program.
 
 This was a group project that was completed with two other individuals.
